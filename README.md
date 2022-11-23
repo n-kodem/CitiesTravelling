@@ -18,7 +18,7 @@ graph TD;
 
 ```mermaid
 graph TD;
-      A1-->A2
+      A1<-->A2
       A1-->A3
       A1-->A4
       A1-->A5
