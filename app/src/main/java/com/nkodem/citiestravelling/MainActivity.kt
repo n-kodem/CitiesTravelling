@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.cityName15),
         findViewById<EditText>(R.id.cityName16),
     )
-    val roads = listOf<EditText>(
+    val roadsId = listOf<EditText>(
         findViewById<EditText>(R.id.from1to2),
         findViewById<EditText>(R.id.from1to3),
         findViewById<EditText>(R.id.from1to4),
@@ -148,6 +148,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.from14to16),
         findViewById<EditText>(R.id.from15to16)
     )
+
     fun getNames(): List<String>{
         val names: MutableList<String> = mutableListOf()
         for(name in namesId)
@@ -157,7 +158,13 @@ class MainActivity : AppCompatActivity() {
     fun getName(number: Int): String{
         return namesId[number+1].text.toString()
     }
-    fun getRoad(){
-
+    fun getRoad(number: Int): String{
+        return roadsId[number].text.toString()
+    }
+    fun getRoads():List<String>{
+        val roads: MutableList<String> = mutableListOf()
+        for(road in roadsId)
+            roads+=road.text.toString()
+        return roads
     }
 }
