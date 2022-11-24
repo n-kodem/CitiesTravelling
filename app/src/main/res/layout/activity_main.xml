@@ -5,119 +5,166 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <LinearLayout
+        android:id="@+id/elementsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Nazwa Miasta"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"/>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 2"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 3"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 4"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 5"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 6"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 7"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 8"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 9"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 10"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 11"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 12"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 13"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 14"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 15"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1 -> 16"/>
-                    </LinearLayout>
-                </ScrollView>
-            </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName1"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/from1to2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 2" />
+
+                            <EditText
+                                android:id="@+id/from1to3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 3" />
+
+                            <EditText
+                                android:id="@+id/from1to4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 4" />
+
+                            <EditText
+                                android:id="@+id/from1to5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 5" />
+
+                            <EditText
+                                android:id="@+id/from1to6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 6" />
+
+                            <EditText
+                                android:id="@+id/from1to7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 7" />
+
+                            <EditText
+                                android:id="@+id/from1to8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 8" />
+
+                            <EditText
+                                android:id="@+id/from1to9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 9" />
+
+                            <EditText
+                                android:id="@+id/from1to10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 10" />
+
+                            <EditText
+                                android:id="@+id/from1to11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 11" />
+
+                            <EditText
+                                android:id="@+id/from1to12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 12" />
+
+                            <EditText
+                                android:id="@+id/from1to13"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 13" />
+
+                            <EditText
+                                android:id="@+id/from1to14"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 14" />
+
+                            <EditText
+                                android:id="@+id/from1to15"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 15" />
+
+                            <EditText
+                                android:id="@+id/from1to16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="1 -> 16" />
+                        </LinearLayout>
+                    </ScrollView>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/cityName2"
+                    android:hint="Nazwa Miasta" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -126,59 +173,86 @@
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 3"/>
+                                android:id="@+id/from2to3"
+                                android:hint="2 -> 3" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 4"/>
+                                android:id="@+id/from2to4"
+                                android:hint="2 -> 4" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 5"/>
+                                android:id="@+id/from2to5"
+                                android:hint="2 -> 5" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 6"/>
+                                android:id="@+id/from2to6"
+                                android:hint="2 -> 6" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 7"/>
+                                android:id="@+id/from2to7"
+                                android:hint="2 -> 7" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 8"/>
+                                android:id="@+id/from2to8"
+                                android:hint="2 -> 8" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 9"/>
+                                android:id="@+id/from2to9"
+                                android:hint="2 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 10"/>
+                                android:id="@+id/from2to10"
+                                android:hint="2 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 11"/>
+                                android:id="@+id/from2to11"
+                                android:hint="2 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 12"/>
+                                android:id="@+id/from2to12"
+                                android:hint="2 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 13"/>
+                                android:id="@+id/from2to13"
+                                android:hint="2 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 14"/>
+                                android:id="@+id/from2to14"
+                                android:hint="2 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 15"/>
+                                android:id="@+id/from2to15"
+                                android:hint="2 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="2 -> 16"/>
+                                android:id="@+id/from2to16"
+                                android:hint="2 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -186,81 +260,114 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName3"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 4"/>
+                                android:id="@+id/from3to4"
+                                android:hint="3 -> 4" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 5"/>
+                                android:id="@+id/from3to5"
+                                android:hint="3 -> 5" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 6"/>
+                                android:id="@+id/from3to6"
+                                android:hint="3 -> 6" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 7"/>
+                                android:id="@+id/from3to7"
+                                android:hint="3 -> 7" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 8"/>
+                                android:id="@+id/from3to8"
+                                android:hint="3 -> 8" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 9"/>
+                                android:id="@+id/from3to9"
+                                android:hint="3 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 10"/>
+                                android:id="@+id/from3to10"
+                                android:hint="3 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 11"/>
+                                android:id="@+id/from3to11"
+                                android:hint="3 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 12"/>
+                                android:id="@+id/from3to12"
+                                android:hint="3 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 13"/>
+                                android:id="@+id/from3to13"
+                                android:hint="3 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 14"/>
+                                android:id="@+id/from3to14"
+                                android:hint="3 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 15"/>
+                                android:id="@+id/from3to15"
+                                android:hint="3 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="3 -> 16"/>
+                                android:id="@+id/from3to16"
+                                android:hint="3 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -268,77 +375,108 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName4"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 5"/>
+                                android:id="@+id/from4to5"
+                                android:hint="4 -> 5" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 6"/>
+                                android:id="@+id/from4to6"
+                                android:hint="4 -> 6" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 7"/>
+                                android:id="@+id/from4to7"
+                                android:hint="4 -> 7" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 8"/>
+                                android:id="@+id/from4to8"
+                                android:hint="4 -> 8" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 9"/>
+                                android:id="@+id/from4to9"
+                                android:hint="4 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 10"/>
+                                android:id="@+id/from4to10"
+                                android:hint="4 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 11"/>
+                                android:id="@+id/from4to11"
+                                android:hint="4 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 12"/>
+                                android:id="@+id/from4to12"
+                                android:hint="4 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 13"/>
+                                android:id="@+id/from4to13"
+                                android:hint="4 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 14"/>
+                                android:id="@+id/from4to14"
+                                android:hint="4 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 15"/>
+                                android:id="@+id/from4to15"
+                                android:hint="4 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="4 -> 16"/>
+                                android:id="@+id/from4to16"
+                                android:hint="4 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -346,73 +484,102 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName5"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 6"/>
+                                android:id="@+id/from5to6"
+                                android:hint="5 -> 6" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 7"/>
+                                android:id="@+id/from5to7"
+                                android:hint="5 -> 7" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 8"/>
+                                android:id="@+id/from5to8"
+                                android:hint="5 -> 8" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 9"/>
+                                android:id="@+id/from5to9"
+                                android:hint="5 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 10"/>
+                                android:id="@+id/from5to10"
+                                android:hint="5 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 11"/>
+                                android:id="@+id/from5to11"
+                                android:hint="5 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 12"/>
+                                android:id="@+id/from5to12"
+                                android:hint="5 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 13"/>
+                                android:id="@+id/from5to13"
+                                android:hint="5 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 14"/>
+                                android:id="@+id/from5to14"
+                                android:hint="5 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 15"/>
+                                android:id="@+id/from5to15"
+                                android:hint="5 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="5 -> 16"/>
+                                android:id="@+id/from5to16"
+                                android:hint="5 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -420,69 +587,96 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName6"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 7"/>
+                                android:id="@+id/from6to7"
+                                android:hint="6 -> 7" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 8"/>
+                                android:id="@+id/from6to8"
+                                android:hint="6 -> 8" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 9"/>
+                                android:id="@+id/from6to9"
+                                android:hint="6 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 10"/>
+                                android:id="@+id/from6to10"
+                                android:hint="6 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 11"/>
+                                android:id="@+id/from6to11"
+                                android:hint="6 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 12"/>
+                                android:id="@+id/from6to12"
+                                android:hint="6 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 13"/>
+                                android:id="@+id/from6to13"
+                                android:hint="6 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 14"/>
+                                android:id="@+id/from6to14"
+                                android:hint="6 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 15"/>
+                                android:id="@+id/from6to15"
+                                android:hint="6 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="6 -> 16"/>
+                                android:id="@+id/from6to16"
+                                android:hint="6 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -490,65 +684,90 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName7"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 8"/>
+                                android:id="@+id/from7to8"
+                                android:hint="7 -> 8" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 9"/>
+                                android:id="@+id/from7to9"
+                                android:hint="7 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 10"/>
+                                android:id="@+id/from7to10"
+                                android:hint="7 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 11"/>
+                                android:id="@+id/from7to11"
+                                android:hint="7 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 12"/>
+                                android:id="@+id/from7to12"
+                                android:hint="7 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 13"/>
+                                android:id="@+id/from7to13"
+                                android:hint="7 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 14"/>
+                                android:id="@+id/from7to14"
+                                android:hint="7 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 15"/>
+                                android:id="@+id/from7to15"
+                                android:hint="7 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="7 -> 16"/>
+                                android:id="@+id/from7to16"
+                                android:hint="7 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -556,61 +775,84 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName8"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 9"/>
+                                android:id="@+id/from8to9"
+                                android:hint="8 -> 9" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 10"/>
+                                android:id="@+id/from8to10"
+                                android:hint="8 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 11"/>
+                                android:id="@+id/from8to11"
+                                android:hint="8 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 12"/>
+                                android:id="@+id/from8to12"
+                                android:hint="8 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 13"/>
+                                android:id="@+id/from8to13"
+                                android:hint="8 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 14"/>
+                                android:id="@+id/from8to14"
+                                android:hint="8 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 15"/>
+                                android:id="@+id/from8to15"
+                                android:hint="8 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="8 -> 16"/>
+                                android:id="@+id/from8to16"
+                                android:hint="8 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -618,57 +860,78 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName9"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 10"/>
+                                android:id="@+id/from9to10"
+                                android:hint="9 -> 10" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 11"/>
+                                android:id="@+id/from9to11"
+                                android:hint="9 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 12"/>
+                                android:id="@+id/from9to12"
+                                android:hint="9 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 13"/>
+                                android:id="@+id/from9to13"
+                                android:hint="9 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 14"/>
+                                android:id="@+id/from9to14"
+                                android:hint="9 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 15"/>
+                                android:id="@+id/from9to15"
+                                android:hint="9 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="9 -> 16"/>
+                                android:id="@+id/from9to16"
+                                android:hint="9 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -676,53 +939,72 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName10"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="10 -> 11"/>
+                                android:id="@+id/from10to11"
+                                android:hint="10 -> 11" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="10 -> 12"/>
+                                android:id="@+id/from10to12"
+                                android:hint="10 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="10 -> 13"/>
+                                android:id="@+id/from10to13"
+                                android:hint="10 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="10 -> 14"/>
+                                android:id="@+id/from10to14"
+                                android:hint="10 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="10 -> 15"/>
+                                android:id="@+id/from10to15"
+                                android:hint="10 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="10 -> 16"/>
+                                android:id="@+id/from10to16"
+                                android:hint="10 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -730,49 +1012,66 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName11"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="11 -> 12"/>
+                                android:id="@+id/from11to12"
+                                android:hint="11 -> 12" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="11 -> 13"/>
+                                android:id="@+id/from11to13"
+                                android:hint="11 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="11 -> 14"/>
+                                android:id="@+id/from11to14"
+                                android:hint="11 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="11 -> 15"/>
+                                android:id="@+id/from11to15"
+                                android:hint="11 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="11 -> 16"/>
+                                android:id="@+id/from11to16"
+                                android:hint="11 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -780,45 +1079,60 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName12"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="12 -> 13"/>
+                                android:id="@+id/from12to13"
+                                android:hint="12 -> 13" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="12 -> 14"/>
+                                android:id="@+id/from12to14"
+                                android:hint="12 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="12 -> 15"/>
+                                android:id="@+id/from12to15"
+                                android:hint="12 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="12 -> 16"/>
+                                android:id="@+id/from12to16"
+                                android:hint="12 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -826,41 +1140,54 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName13"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="13 -> 14"/>
+                                android:id="@+id/from13to14"
+                                android:hint="13 -> 14" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="13 -> 15"/>
+                                android:id="@+id/from13to15"
+                                android:hint="13 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="13 -> 16"/>
+                                android:id="@+id/from13to16"
+                                android:hint="13 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -868,37 +1195,48 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName14"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="14 -> 15"/>
+                                android:id="@+id/from14to15"
+                                android:hint="14 -> 15" />
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="14 -> 16"/>
+                                android:id="@+id/from14to16"
+                                android:hint="14 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -906,33 +1244,42 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName15"
+                    android:hint="Nazwa Miasta" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="15 -> 16"/>
+                                android:id="@+id/from15to16"
+                                android:hint="15 -> 16" />
                         </LinearLayout>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
@@ -940,19 +1287,23 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView android:layout_margin="15dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nazwa Miasta"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:id="@+id/cityName16"
+                    android:hint="Nazwa Miasta" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
