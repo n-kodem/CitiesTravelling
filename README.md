@@ -17,7 +17,7 @@ graph TD;
 ## Ścieżka miast
 
 ```mermaid
-graph TD;
+flowchart TD;
       A1<-->A2
       A1<-->A3
       A1<-->A4
