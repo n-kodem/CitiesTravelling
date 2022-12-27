@@ -1,18 +1,24 @@
 package com.nkodem.citiestravelling
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nkodem.citiestravelling.algorithms.TravellingMerchantProblem
 
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         findViewById<FloatingActionButton>(R.id.run).setOnClickListener {
 
@@ -53,9 +59,10 @@ class MainActivity : AppCompatActivity() {
 //        println(hamiltonianCycle)
         }
 
-    }
+
+
     val namesId = listOf<EditText>(
-        findViewById<EditText>(R.id.cityName1),
+        this.findViewById(R.id.cityName1) as EditText,
         findViewById<EditText>(R.id.cityName2),
         findViewById<EditText>(R.id.cityName3),
         findViewById<EditText>(R.id.cityName4),
@@ -116,4 +123,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+}
 }
