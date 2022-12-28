@@ -10,7 +10,7 @@ class TravellingMerchantProblem {
         }
     }
 
-    fun solve(cities:List<String>, graph:Graph) {
+    fun solve(cities:List<String>, graph:Graph): Pair<List<String>,List<Int>> {
         val routes = cities.permutations()
         var shortestRoute = emptyList<String>()
         var shortestDistance = Double.MAX_VALUE
@@ -23,7 +23,7 @@ class TravellingMerchantProblem {
                 }
             }
         }
-        var dst = 0
+        var dst:MutableList<Int> = mutableListOf()
         for (city in 0..shortestRoute.size-2){
             println(shortestRoute[(shortestRoute.size-1)-city]
                     +" "+
@@ -31,6 +31,7 @@ class TravellingMerchantProblem {
             dst+=graph.getEdgeDistance(shortestRoute[(shortestRoute.size-1)-city],shortestRoute[shortestRoute.indexOf(shortestRoute[(shortestRoute.size-1)-city])-1])
         }
         println(shortestRoute[0])
-        println("Total distance: $dst")
+        println("Total distance: ${dst.sum()}")
+        return Pair<List<String>,List<Int>>(shortestRoute.reversed(), dst)
     }
 }

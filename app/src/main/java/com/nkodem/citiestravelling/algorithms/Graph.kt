@@ -4,7 +4,7 @@ import kotlin.math.abs
 import kotlin.collections.*
 
 class Graph {
-    data class IntNode(val i: Any) : Node
+    data class IntNode(public override var i: Any) : Node
     var nodes: List<Edge> = listOf()
 
     fun addNewEdge(source:Any,destination:Any,distance:Int){
@@ -13,13 +13,13 @@ class Graph {
 
     fun containsEdge(source: Int,destination: Int):Boolean{
         for (edge in nodes)
-            if (edge.node1==IntNode(source) && edge.node2==IntNode(destination))
+            if (edge.from==IntNode(source) && edge.to==IntNode(destination))
                 return true
         return false
     }
     fun getEdgeDistance(source: Any, destination: Any):Int{
         for (edge in nodes){
-            if (edge.node1==IntNode(source) && edge.node2 == IntNode(destination))
+            if (edge.from==IntNode(source) && edge.to == IntNode(destination))
                 return edge.distance
         }
         return -1

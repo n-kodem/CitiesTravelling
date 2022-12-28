@@ -17,15 +17,15 @@ class DijkstraSearcher {
             val u = distinctNodesList.minByOrNull { distancesFromSource[it] ?: 0 }
             distinctNodesList.remove(u)
 
-            // if found shortest path
+            // if found the shortest path
             if (u == target) {
                 break
             }
 
             edges
-                .filter { it.node1 == u }
+                .filter { it.from == u }
                 .forEach { edge ->
-                    val v = edge.node2
+                    val v = edge.to
                     val rootToNeighborLen = (distancesFromSource[u] ?: 0) + edge.distance
                     if (rootToNeighborLen < (distancesFromSource[v] ?: 0)) {
                         distancesFromSource[v] = rootToNeighborLen
@@ -40,8 +40,8 @@ class DijkstraSearcher {
     private fun findDistinctNodes(edges: List<Edge>): MutableSet<Node> {
         val nodes = mutableSetOf<Node>()
         edges.forEach {
-            nodes.add(it.node1)
-            nodes.add(it.node2)
+            nodes.add(it.from)
+            nodes.add(it.to)
         }
         return nodes
     }

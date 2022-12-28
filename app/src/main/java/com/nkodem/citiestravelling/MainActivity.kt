@@ -1,18 +1,26 @@
 package com.nkodem.citiestravelling
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.ScrollView
 import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nkodem.citiestravelling.algorithms.Graph
 import com.nkodem.citiestravelling.algorithms.TravellingMerchantProblem
-
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Matrix
+import android.graphics.Paint
+import android.graphics.PointF
+import android.view.*
+import android.widget.*
+import com.nkodem.citiestravelling.algorithms.Edge
+import java.io.FileOutputStream
+import kotlin.math.cos
+import kotlin.math.sin
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -22,46 +30,46 @@ class MainActivity : AppCompatActivity() {
 
 
         val namesId = listOf<EditText>(
-            findViewById<EditText>(R.id.cityName1),
-            findViewById<EditText>(R.id.cityName2),
-            findViewById<EditText>(R.id.cityName3),
-            findViewById<EditText>(R.id.cityName4),
-            findViewById<EditText>(R.id.cityName5),
-            findViewById<EditText>(R.id.cityName6),
-            findViewById<EditText>(R.id.cityName7),
-            findViewById<EditText>(R.id.cityName8),
+            findViewById(R.id.cityName1),
+            findViewById(R.id.cityName2),
+            findViewById(R.id.cityName3),
+            findViewById(R.id.cityName4),
+            findViewById(R.id.cityName5),
+            findViewById(R.id.cityName6),
+            findViewById(R.id.cityName7),
+            findViewById(R.id.cityName8),
         )
         val roadsId = listOf<EditText>(
-            findViewById<EditText>(R.id.from1to2),
-            findViewById<EditText>(R.id.from1to3),
-            findViewById<EditText>(R.id.from1to4),
-            findViewById<EditText>(R.id.from1to5),
-            findViewById<EditText>(R.id.from1to6),
-            findViewById<EditText>(R.id.from1to7),
-            findViewById<EditText>(R.id.from1to8),
-            findViewById<EditText>(R.id.from2to3),
-            findViewById<EditText>(R.id.from2to4),
-            findViewById<EditText>(R.id.from2to5),
-            findViewById<EditText>(R.id.from2to6),
-            findViewById<EditText>(R.id.from2to7),
-            findViewById<EditText>(R.id.from2to8),
-            findViewById<EditText>(R.id.from3to4),
-            findViewById<EditText>(R.id.from3to5),
-            findViewById<EditText>(R.id.from3to6),
-            findViewById<EditText>(R.id.from3to7),
-            findViewById<EditText>(R.id.from3to8),
-            findViewById<EditText>(R.id.from4to5),
-            findViewById<EditText>(R.id.from4to6),
-            findViewById<EditText>(R.id.from4to7),
-            findViewById<EditText>(R.id.from4to8),
-            findViewById<EditText>(R.id.from5to6),
-            findViewById<EditText>(R.id.from5to7),
-            findViewById<EditText>(R.id.from5to8),
-            findViewById<EditText>(R.id.from6to7),
-            findViewById<EditText>(R.id.from6to8),
-            findViewById<EditText>(R.id.from7to8),
+            findViewById(R.id.from1to2),
+            findViewById(R.id.from1to3),
+            findViewById(R.id.from1to4),
+            findViewById(R.id.from1to5),
+            findViewById(R.id.from1to6),
+            findViewById(R.id.from1to7),
+            findViewById(R.id.from1to8),
+            findViewById(R.id.from2to3),
+            findViewById(R.id.from2to4),
+            findViewById(R.id.from2to5),
+            findViewById(R.id.from2to6),
+            findViewById(R.id.from2to7),
+            findViewById(R.id.from2to8),
+            findViewById(R.id.from3to4),
+            findViewById(R.id.from3to5),
+            findViewById(R.id.from3to6),
+            findViewById(R.id.from3to7),
+            findViewById(R.id.from3to8),
+            findViewById(R.id.from4to5),
+            findViewById(R.id.from4to6),
+            findViewById(R.id.from4to7),
+            findViewById(R.id.from4to8),
+            findViewById(R.id.from5to6),
+            findViewById(R.id.from5to7),
+            findViewById(R.id.from5to8),
+            findViewById(R.id.from6to7),
+            findViewById(R.id.from6to8),
+            findViewById(R.id.from7to8),
 
-            )
+        )
 
         fun getNames(): List<String>{
             val names: MutableList<String> = mutableListOf()
@@ -82,9 +90,124 @@ class MainActivity : AppCompatActivity() {
             return roads
         }
 
+        fun createPNG(verticles: List<String>, edges: List<Edge>, fileName: String): Bitmap? {
+            // Create a new Bitmap and Canvas to draw on
+            val bitmap = Bitmap.createBitmap(800, 600, Bitmap.Config.ARGB_8888)
+            val canvas = Canvas(bitmap)
+
+            // cities painter
+            val paint = Paint()
+            paint.color = Color.BLACK
+            paint.strokeWidth = 8f
+            paint.textSize = 20f
+
+            // labels painter
+            val labelPaint = Paint()
+            labelPaint.color = Color.WHITE
+            labelPaint.strokeWidth = 16f
+            labelPaint.textSize = 20f
+
+            // roads painter
+            val roadPaint = Paint()
+            roadPaint.color = Color.RED
+            roadPaint.strokeWidth = 8f
+            roadPaint.textSize = 20f
+
+            // Calculate the radius and center of the circular layout
+            val radius = 200f
+            val centerX = 400f
+            val centerY = 300f
+
+            // Create a map of verticle positions
+            val positions = mutableMapOf<String, Pair<Float, Float>>()
+            for (i in verticles.indices) {
+                val angle = 2 * Math.PI * i / verticles.size
+                val x = centerX + (radius * cos(angle))
+                val y = centerY + (radius * sin(angle))
+                positions[verticles[i]] = x.toFloat() to y.toFloat()
+            }
+
+            // Draw the edges on the canvas
+            for (edge in edges) {
+                val fromPos = positions[edge.from.i.toString()] ?: continue
+                val toPos = positions[edge.to.i.toString()] ?: continue
+
+                canvas.drawLine(fromPos.first, fromPos.second, toPos.first, toPos.second, roadPaint) // Drawing roads
+
+                // Calculate the label position
+                val x = (fromPos.first + toPos.first) / 2
+                val y = (fromPos.second + toPos.second) / 2
+
+                // Draw the label
+                canvas.drawText("${edge.distance}", x, y, labelPaint)
+            }
+
+            // Draw the verticles on the canvas
+            for ((verticle, pos) in positions) {
+                canvas.drawCircle(pos.first, pos.second, 20f, paint)
+            }
+
+            // Save the Bitmap as a PNG image
+            val outputStream = FileOutputStream(fileName)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+            outputStream.close()
+
+            return bitmap
+        }
+
+        fun showBitmapPopup(context: Context, anchorView: View, bitmap: Bitmap) {
+            val frameLayout = FrameLayout(context).apply {
+                setBackgroundColor(Color.parseColor("#212121"))
+                setPadding(16, 16, 16, 16)
+            }
+
+            val imageView = ImageView(context).apply {
+                layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            }
+            var scale = 1F
+            val scaleGestureDetector = ScaleGestureDetector(context, object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+                override fun onScale(detector: ScaleGestureDetector): Boolean {
+                    val scaleFactor = detector.scaleFactor
+                    scale *= scaleFactor
+                    scale = 0.1f.coerceAtLeast(scale.coerceAtMost(5.0f))
+
+                    imageView.imageMatrix = Matrix().apply {
+                        setScale(scale, scale)
+                    }
+                    imageView.scaleX = scale
+                    imageView.scaleY = scale
+                    println(scale)
+                    return true
+                }
+            })
+            imageView.setOnTouchListener { _, event ->
+                scaleGestureDetector.onTouchEvent(event)
+                true
+            }
+            frameLayout.addView(imageView)
+
+            val button = Button(context).apply {
+                text = "Close"
+                layoutParams = FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
+                    gravity = Gravity.BOTTOM or Gravity.END
+                }
+            }
+            frameLayout.addView(button)
+
+            val popupWindow = PopupWindow(frameLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            imageView.setImageBitmap(bitmap)
+
+            button.setOnClickListener {
+                popupWindow.dismiss()
+            }
+
+            popupWindow.showAtLocation(anchorView, Gravity.CENTER, 0, 0)
+        }
+
+
 
         findViewById<FloatingActionButton>(R.id.run).setOnClickListener {
-            var graph = Graph()
+            val graph = Graph()
 
             // NORMAL
             graph.addNewEdge(getName(0),getName(1),getRoad(0).toInt())
@@ -162,12 +285,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            TravellingMerchantProblem().solve(getNames(),graph)
+            val solution = TravellingMerchantProblem().solve(getNames(),graph)
+            val fileName = "/storage/emulated/0/Download/zdjecieKotlin.png"
+
+            // saving and showing image
+            createPNG(solution.first, graph.GetAllEdges(), fileName)?.let { result ->
+                showBitmapPopup(this.applicationContext,this.findViewById(R.id.parentScroll),
+                    result
+                )
+            }
+
         }
 
 
-}
-
-
+    }
 
 }

@@ -1,8 +1,10 @@
 package com.nkodem.citiestravelling.algorithms
 
-interface Node
+interface Node {
+    var i: Any
+}
 
-data class Edge(val node1: Node, val node2: Node, val distance: Int)
+data class Edge(val from: Node, val to: Node, val distance: Int)
 
 
 class ShortestPathResult(val prev: Map<Node, Node?>, val dist: Map<Node, Int>, val source: Node, val destination: Node) {
