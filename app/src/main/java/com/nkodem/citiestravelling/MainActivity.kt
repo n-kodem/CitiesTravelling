@@ -1,31 +1,25 @@
 package com.nkodem.citiestravelling
 
-import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.cardview.widget.CardView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.nkodem.citiestravelling.algorithms.Graph
-import com.nkodem.citiestravelling.algorithms.TravellingMerchantProblem
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Matrix
-import android.graphics.Paint
-import android.graphics.PointF
+import android.graphics.*
+import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.os.Environment
 import android.view.*
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nkodem.citiestravelling.algorithms.Edge
+import com.nkodem.citiestravelling.algorithms.Graph
+import com.nkodem.citiestravelling.algorithms.TravellingMerchantProblem
 import java.io.File
 import java.io.FileOutputStream
 import kotlin.math.cos
@@ -144,11 +138,8 @@ class MainActivity : AppCompatActivity() {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
             outputStream.close()
 
-            // Add the image to the system photo gallery
-            val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
-            val contentUri = Uri.fromFile(imageFile)
-            mediaScanIntent.data = contentUri
-            baseContext.sendBroadcast(mediaScanIntent)
+            MediaScannerConnection.scanFile(baseContext, arrayOf(imageFile.toString()),
+                null, null)
         }
 
 
