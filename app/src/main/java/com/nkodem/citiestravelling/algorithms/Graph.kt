@@ -7,8 +7,8 @@ class Graph {
     data class IntNode(val i: Any) : Node
     var nodes: List<Edge> = listOf()
 
-    fun addNewEdge(source:Int,destination:Int){
-        nodes = nodes + Edge(IntNode(source), IntNode(destination), abs(destination-source))
+    fun addNewEdge(source:Any,destination:Any,distance:Int){
+        nodes = nodes + Edge(IntNode(source), IntNode(destination), abs(distance))
     }
 
     fun containsEdge(source: Int,destination: Int):Boolean{
@@ -17,7 +17,13 @@ class Graph {
                 return true
         return false
     }
-
+    fun getEdgeDistance(source: Any, destination: Any):Int{
+        for (edge in nodes){
+            if (edge.node1==IntNode(source) && edge.node2 == IntNode(destination))
+                return edge.distance
+        }
+        return -1
+    }
     fun findP(source:Any,destination:Any): String{
         val res = DijkstraSearcher().findShortestPath(nodes,IntNode(source),IntNode(destination))
 
@@ -29,16 +35,19 @@ class Graph {
             result+=" ${(node as IntNode).i} ->"
         return "Path found: ${result.substring(0,result.length-3)}"
     }
-    fun GetPDis(source:Any,destination:Any): Int?{
-        val res = DijkstraSearcher().findShortestPath(nodes,IntNode(source),IntNode(destination))
-
-        if (res.shortestPath().isEmpty())
-            return null
-        var reslist = res.dist.toList()
-        var sum = 0
-        for (e in reslist)
-            sum+=e.toList()[0].toString().toInt()
-        return sum
-
+//    fun GetPDis(source:Any,destination:Any): Int?{
+//        val res = DijkstraSearcher().findShortestPath(nodes,IntNode(source),IntNode(destination))
+//
+//        if (res.shortestPath().isEmpty())
+//            return null
+//        var reslist = res.dist.toList()
+//        var sum = 0
+//        for (e in reslist)
+//            sum+=e.toList()[1].toString().toInt()
+//        return sum
+//
+//    }
+    fun GetAllEdges(): List<Edge> {
+        return nodes
     }
 }
