@@ -2,7 +2,11 @@ package com.nkodem.citiestravelling
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
@@ -15,9 +19,14 @@ import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.Paint
 import android.graphics.PointF
+import android.net.Uri
+import android.os.Build
+import android.os.Environment
 import android.view.*
 import android.widget.*
+import androidx.core.app.NotificationCompat
 import com.nkodem.citiestravelling.algorithms.Edge
+import java.io.File
 import java.io.FileOutputStream
 import kotlin.math.cos
 import kotlin.math.sin
@@ -90,7 +99,60 @@ class MainActivity : AppCompatActivity() {
             return roads
         }
 
-        fun createPNG(verticles: List<String>, edges: List<Edge>, fileName: String): Bitmap? {
+        fun showNotification(title: String, message: String) {
+            // Create notification
+            val notificationManager = baseContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationId = System.currentTimeMillis().toInt()
+            val notificationChannelId = "graph_notification"
+            val notificationChannelName = "Graph notification"
+
+            // Create a notification channel if needed
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val notificationChannel = NotificationChannel(notificationChannelId, notificationChannelName, NotificationManager.IMPORTANCE_HIGH)
+                notificationManager.createNotificationChannel(notificationChannel)
+            }
+
+            // Create notification
+            val notification = NotificationCompat.Builder(baseContext, notificationChannelId)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setAutoCancel(true)
+                .build()
+
+            // Show notification
+            notificationManager.notify(notificationId, notification)
+        }
+
+        fun saveImageToGallery(bitmap: Bitmap) {
+            // Get the external storage directory for pictures
+            val storageDir: File = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+
+            // Create a subdirectory in the pictures directory
+            val appDirectory = File("${storageDir.absolutePath}/${baseContext.packageManager.getApplicationLabel(baseContext.packageManager.getApplicationInfo(baseContext.packageName, PackageManager.GET_META_DATA))}")
+            appDirectory.mkdirs()
+
+            // Generate a unique file name
+            val fileName = "Graph_${System.currentTimeMillis()}.jpg"
+
+            // Create the file
+            val imageFile = File(appDirectory, fileName)
+            imageFile.createNewFile()
+
+            // Save the bitmap to the file
+            val outputStream = FileOutputStream(imageFile)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+            outputStream.close()
+
+            // Add the image to the system photo gallery
+            val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+            val contentUri = Uri.fromFile(imageFile)
+            mediaScanIntent.data = contentUri
+            baseContext.sendBroadcast(mediaScanIntent)
+        }
+
+
+        fun createPNG(verticles: List<String>, edges: List<Edge>): Bitmap? {
             // Create a new Bitmap and Canvas to draw on
             val bitmap = Bitmap.createBitmap(800, 600, Bitmap.Config.ARGB_8888)
             val canvas = Canvas(bitmap)
@@ -146,12 +208,6 @@ class MainActivity : AppCompatActivity() {
             for ((verticle, pos) in positions) {
                 canvas.drawCircle(pos.first, pos.second, 20f, paint)
             }
-
-            // Save the Bitmap as a PNG image
-            val outputStream = FileOutputStream(fileName)
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-            outputStream.close()
-
             return bitmap
         }
 
@@ -286,10 +342,11 @@ class MainActivity : AppCompatActivity() {
 
 
             val solution = TravellingMerchantProblem().solve(getNames(),graph)
-            val fileName = "/storage/emulated/0/Download/zdjecieKotlin.png"
 
-            // saving and showing image
-            createPNG(solution.first, graph.GetAllEdges(), fileName)?.let { result ->
+            // creating, saving and showing image also notifying user that image is saved
+            createPNG(solution.first, graph.GetAllEdges())?.let { result ->
+                saveImageToGallery(result)
+                showNotification("Graph app","Image saved!")
                 showBitmapPopup(this.applicationContext,this.findViewById(R.id.parentScroll),
                     result
                 )
