@@ -4,11 +4,9 @@ import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.media.MediaScannerConnection
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -22,6 +20,8 @@ import com.nkodem.citiestravelling.algorithms.Graph
 import com.nkodem.citiestravelling.algorithms.TravellingMerchantProblem
 import java.io.File
 import java.io.FileOutputStream
+import kotlin.math.atan
+import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -142,6 +142,30 @@ class MainActivity : AppCompatActivity() {
                 null, null)
         }
 
+        fun calcDegree(startPoint: Pair<Float, Float>, endPoint: Pair<Float, Float>): Double {
+            var startRadians = atan((endPoint.second - startPoint.second) / (endPoint.first - startPoint.first))
+            startRadians += ((if (endPoint.first >= startPoint.first) 90 else -90) * Math.PI / 180).toFloat()
+            return Math.toDegrees(startRadians.toDouble())
+        }
+
+        fun arr(canvas: Canvas, startPoint: Pair<Float, Float>, endPoint: Pair<Float, Float>){
+            // Create a paint object with default values
+            val paint = Paint().apply {
+                color = Color.BLUE
+                strokeWidth = 8f
+            }
+            var degree1 = calcDegree(startPoint,endPoint)
+
+            var endX11 = (endPoint.first + ((10) * Math.cos(Math.toRadians((degree1-30)+90)))).toFloat();
+            var endY11 = (endPoint.second + ((10) * Math.sin(Math.toRadians(((degree1-30)+90))))).toFloat();
+
+            var endX22 = (endPoint.first + ((10) * Math.cos(Math.toRadians((degree1-60)+180)))).toFloat();
+            var endY22 = (endPoint.second + ((10) * Math.sin(Math.toRadians(((degree1-60)+180))))).toFloat();
+
+            canvas.drawLine(endPoint.first,endPoint.second,endX11,endY11,paint);
+            canvas.drawLine(endPoint.first,endPoint.second,endX22,endY22,paint);
+
+        }
 
         fun createPNG(verticles: List<String>, edges: List<Edge>): Bitmap? {
             // Create a new Bitmap and Canvas to draw on
@@ -150,7 +174,7 @@ class MainActivity : AppCompatActivity() {
 
             // cities painter
             val paint = Paint()
-            paint.color = Color.BLACK
+            paint.color = Color.GRAY
             paint.strokeWidth = 8f
             paint.textSize = 20f
 
@@ -199,6 +223,30 @@ class MainActivity : AppCompatActivity() {
             for ((verticle, pos) in positions) {
                 canvas.drawCircle(pos.first, pos.second, 20f, paint)
             }
+
+            // Draw Travelling Salesman path
+            for (verticleNum in 1 until verticles.size){
+                positions[verticles[verticleNum-1]]?.let { startPoint ->
+                    positions[verticles[verticleNum]]?.let { endPoint ->
+                        canvas.drawLine(startPoint.first,startPoint.second,endPoint.first,endPoint.second,Paint().apply {
+                            color = Color.BLUE
+                            strokeWidth = 5f
+                        })
+                    }
+                }
+            }
+            for (verticleNum in 0..verticles.size-2){
+                positions[verticles[verticleNum]]?.let { startPoint ->
+                    positions[verticles[verticleNum+1]]?.let { endPoint ->
+                        arr(
+                            canvas,
+                            startPoint,
+                            endPoint
+                        )
+                    }
+                }
+            }
+
             return bitmap
         }
 
