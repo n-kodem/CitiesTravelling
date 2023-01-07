@@ -29,9 +29,24 @@
 ```mermaid
 flowchart TD;
       A[Pole do wprowadzenia danych]-->B["Oddzielne pola edycyjne dla każdego z miast"];
-      A-->D["2 pola edycyjne: Miasto A -> Miasto B"];
-      B & D --> C["Przycisk do uruchomienia wyszukiwania"];
+    A-->D["Pola edycyjne dla dróg każdego z miast np: Miasto A -> Miasto B"];
+    B & D --> C["Przycisk do uruchomienia wyszukiwania"];
+    C --> D["Graficzna Reprezentacja obrazu"] & E["Przycisk powrotu"];
+    E --> A;
 ```
+
+
+## Rozwiązania
+
+- Do obliczenia najkrótszej ścieżki między miastami zostanie wykorzystany algorytm Dijkstry.
+
+- Aplikacja będzie używała Canvas w celu rysowania graficznej reprezentacji miast oraz ścieżek pomiędzy nimi.
+
+- Aplikacja będzie używała klasy MediaScannerConnection w celu zapisywania wygenerowanych graficznych reprezentacji ścieżek do galerii zdjęć w osobnym albumie.
+
+- Aplikacja będzie używała powiadomień w celu potwierdzenia zapisania zdjęć.
+
+- W celu zwiększenia wydajności i szybkości działania aplikacji, zostanie zastosowana optymalizacja kodu oraz odpowiednie struktury danych.
 
 ## Ścieżka miast
 
@@ -67,15 +82,3 @@ flowchart TD;
       A7<-->A8
 
 ```
-
-## Rozwiązania
-
-- Do obliczenia najkrótszej ścieżki między miastami zostanie wykorzystany algorytm Dijkstry.
-
-- Aplikacja będzie używała Canvas w celu rysowania graficznej reprezentacji miast oraz ścieżek pomiędzy nimi.
-
-- Aplikacja będzie używała klasy MediaScannerConnection w celu zapisywania wygenerowanych graficznych reprezentacji ścieżek do galerii zdjęć w osobnym albumie.
-
-- Aplikacja będzie używała powiadomień w celu potwierdzenia zapisania zdjęć.
-
-- W celu zwiększenia wydajności i szybkości działania aplikacji, zostanie zastosowana optymalizacja kodu oraz odpowiednie struktury danych.
