@@ -8,10 +8,10 @@
 ## Wygląd
 
 ```mermaid
-graph TD;
-      A[Pole do wprowadzenia danych]-->B[Oddzielne pola edycyjne dla każdego z miast];
-      A-->D[2 pola edycyjne: Miasto A -> Miasto B];
-      B & D --> C[Przycisk do uruchomienia wyszukiwania];
+flowchart TD;
+      A[Pole do wprowadzenia danych]-->B["Oddzielne pola edycyjne dla każdego z miast"];
+      A-->D["2 pola edycyjne: Miasto A -> Miasto B"];
+      B & D --> C["Przycisk do uruchomienia wyszukiwania"];
 ```
 
 ## Ścieżka miast

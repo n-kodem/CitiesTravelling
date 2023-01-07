@@ -32,12 +32,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:id="@+id/cityName1"
-                        android:hint="Nazwa Miasta"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/cityName1"
+                            android:hint="Nazwa Miasta 1" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                                 android:id="@+id/from1to2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="1 -> 2"
+                                android:hint="Droga: Miasto 1 -> Miasto 2"
                                 android:inputType="numberDecimal" />
 
                             <EditText
@@ -61,42 +61,42 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
-                                android:hint="1 -> 3"/>
+                                android:hint="Droga: Miasto 1 -> Miasto 3"/>
 
                             <EditText
                                 android:id="@+id/from1to4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
-                                android:hint="1 -> 4"/>
+                                android:hint="Droga: Miasto 1 -> Miasto 4"/>
 
                             <EditText
                                 android:id="@+id/from1to5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
-                                android:hint="1 -> 5"/>
+                                android:hint="Droga: Miasto 1 -> Miasto 5"/>
 
                             <EditText
                                 android:id="@+id/from1to6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
-                                android:hint="1 -> 6"/>
+                                android:hint="Droga: Miasto 1 -> Miasto 6"/>
 
                             <EditText
                                 android:id="@+id/from1to7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
-                                android:hint="1 -> 7"/>
+                                android:hint="Droga: Miasto 1 -> Miasto 7"/>
 
                             <EditText
                                 android:id="@+id/from1to8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
-                                android:hint="1 -> 8"/>
+                                android:hint="Droga: Miasto 1 -> Miasto 8"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -114,12 +114,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:id="@+id/cityName2"
-                        android:hint="Nazwa Miasta"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/cityName2"
+                            android:hint="Nazwa Miasta 2" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -133,46 +133,46 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from2to3"
                                 android:inputType="numberDecimal"
-                                android:hint="2 -> 3"/>
+                                android:hint="Droga: Miasto 2 -> Miasto 3"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from2to4"
                                 android:inputType="numberDecimal"
-                                android:hint="2 -> 4"/>
+                                android:hint="Droga: Miasto 2 -> Miasto 4"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from2to5"
                                 android:inputType="numberDecimal"
-                                android:hint="2 -> 5"/>
+                                android:hint="Droga: Miasto 2 -> Miasto 5"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from2to6"
                                 android:inputType="numberDecimal"
-                                android:hint="2 -> 6"/>
+                                android:hint="Droga: Miasto 2 -> Miasto 6"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from2to7"
                                 android:inputType="numberDecimal"
-                                android:hint="2 -> 7"/>
+                                android:hint="Droga: Miasto 2 -> Miasto 7"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from2to8"
                                 android:inputType="numberDecimal"
-                                android:hint="2 -> 8"/>
+                                android:hint="Droga: Miasto 2 -> Miasto 8"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -190,12 +190,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:id="@+id/cityName3"
-                        android:hint="Nazwa Miasta"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/cityName3"
+                            android:hint="Nazwa Miasta 3" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -208,39 +208,39 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from3to4"
                                 android:inputType="numberDecimal"
-                                android:hint="3 -> 4"/>
+                                android:hint="Droga: Miasto 3 -> Miasto 4"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from3to5"
                                 android:inputType="numberDecimal"
-                                android:hint="3 -> 5"/>
+                                android:hint="Droga: Miasto 3 -> Miasto 5"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from3to6"
                                 android:inputType="numberDecimal"
-                                android:hint="3 -> 6"/>
+                                android:hint="Droga: Miasto 3 -> Miasto 6"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from3to7"
                                 android:inputType="numberDecimal"
-                                android:hint="3 -> 7"/>
+                                android:hint="Droga: Miasto 3 -> Miasto 7"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from3to8"
                                 android:inputType="numberDecimal"
-                                android:hint="3 -> 8"/>
+                                android:hint="Droga: Miasto 3 -> Miasto 8"/>
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -259,12 +259,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:id="@+id/cityName4"
-                        android:hint="Nazwa Miasta"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/cityName4"
+                            android:hint="Nazwa Miasta 4" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -277,32 +277,32 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from4to5"
                                 android:inputType="numberDecimal"
-                                android:hint="4 -> 5"/>
+                                android:hint="Droga: Miasto 4 -> Miasto 5"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from4to6"
                                 android:inputType="numberDecimal"
-                                android:hint="4 -> 6"/>
+                                android:hint="Droga: Miasto 4 -> Miasto 6"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from4to7"
                                 android:inputType="numberDecimal"
-                                android:hint="4 -> 7"/>
+                                android:hint="Droga: Miasto 4 -> Miasto 7"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from4to8"
                                 android:inputType="numberDecimal"
-                                android:hint="4 -> 8"/>
+                                android:hint="Droga: Miasto 4 -> Miasto 8"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -325,7 +325,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:id="@+id/cityName5"
-                        android:hint="Nazwa Miasta"/>
+                        android:hint="Nazwa Miasta 5" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -338,25 +338,25 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from5to6"
                                 android:inputType="numberDecimal"
-                                android:hint="5 -> 6"/>
+                                android:hint="Droga: Miasto 5 -> Miasto 6"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from5to7"
                                 android:inputType="numberDecimal"
-                                android:hint="5 -> 7"/>
+                                android:hint="Droga: Miasto 5 -> Miasto 7"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from5to8"
                                 android:inputType="numberDecimal"
-                                android:hint="5 -> 8"/>
+                                android:hint="Droga: Miasto 5 -> Miasto 8"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -379,7 +379,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:id="@+id/cityName6"
-                        android:hint="Nazwa Miasta"/>
+                        android:hint="Nazwa Miasta 6" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -392,18 +392,18 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from6to7"
                                 android:inputType="numberDecimal"
-                                android:hint="6 -> 7"/>
+                                android:hint="Droga: Miasto 6 -> Miasto 7"/>
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from6to8"
                                 android:inputType="numberDecimal"
-                                android:hint="6 -> 8"/>
+                                android:hint="Droga: Miasto 6 -> Miasto 8"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -426,7 +426,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:id="@+id/cityName7"
-                        android:hint="Nazwa Miasta"/>
+                        android:hint="Nazwa Miasta 7" android:singleLine="true"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -439,11 +439,11 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/from7to8"
                                 android:inputType="numberDecimal"
-                                android:hint="7 -> 8"/>
+                                android:hint="Droga: Miasto 7 -> Miasto 8"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -466,7 +466,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:id="@+id/cityName8"
-                        android:hint="Nazwa Miasta"/>
+                        android:hint="Nazwa Miasta 8" android:singleLine="true"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

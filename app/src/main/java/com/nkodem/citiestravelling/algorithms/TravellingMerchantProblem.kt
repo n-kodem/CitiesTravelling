@@ -11,11 +11,20 @@ class TravellingMerchantProblem {
     }
 
     fun solve(cities:List<String>, graph:Graph): Pair<List<String>,List<Int>> {
+        // Permutacja wszystkich miast
         val routes = cities.permutations()
+
+//        for(i in routes)
+//            println(i.toString())
+
+        // Zmienna do przechowania najkrótrzej drogi
         var shortestRoute = emptyList<String>()
+        // Zmienna do przechowania najmniejszego dystansu
         var shortestDistance = Double.MAX_VALUE
+        // Sprawdzamy każdą z opcji
         for (route in routes) {
-            val distance = graph.getEdgeDistance(route[0],route[1])
+            val distance = graph.getEdgeDistance(route[0],route[1]) + graph.getEdgeDistance(route[1],route[2]) +graph.getEdgeDistance(route[2],route[3]) +graph.getEdgeDistance(route[3],route[4]) +graph.getEdgeDistance(route[4],route[5]) +graph.getEdgeDistance(route[5],route[6]) +graph.getEdgeDistance(route[6],route[7])
+            println("dystans: $distance")
             if (distance != -1) {
                 if (distance<shortestDistance){
                     shortestRoute = route

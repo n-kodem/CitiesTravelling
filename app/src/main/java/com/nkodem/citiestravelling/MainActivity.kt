@@ -24,6 +24,8 @@ import kotlin.math.atan
 import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.sin
+import kotlin.random.Random
+import kotlin.random.nextInt
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -167,7 +169,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        fun createPNG(verticles: List<String>, edges: List<Edge>): Bitmap? {
+        fun createPNG(verticles: List<String>, edges: List<Edge>, citiesTS: List<String>): Bitmap? {
             // Create a new Bitmap and Canvas to draw on
             val bitmap = Bitmap.createBitmap(800, 600, Bitmap.Config.ARGB_8888)
             val canvas = Canvas(bitmap)
@@ -197,6 +199,7 @@ class MainActivity : AppCompatActivity() {
 
             // Create a map of verticle positions
             val positions = mutableMapOf<String, Pair<Float, Float>>()
+
             for (i in verticles.indices) {
                 val angle = 2 * Math.PI * i / verticles.size
                 val x = centerX + (radius * cos(angle))
@@ -222,12 +225,13 @@ class MainActivity : AppCompatActivity() {
             // Draw the verticles on the canvas
             for ((verticle, pos) in positions) {
                 canvas.drawCircle(pos.first, pos.second, 20f, paint)
+                canvas.drawText("  $verticle",pos.first, pos.second, labelPaint)
             }
 
             // Draw Travelling Salesman path
             for (verticleNum in 1 until verticles.size){
-                positions[verticles[verticleNum-1]]?.let { startPoint ->
-                    positions[verticles[verticleNum]]?.let { endPoint ->
+                positions[citiesTS[verticleNum-1]]?.let { startPoint ->
+                    positions[citiesTS[verticleNum]]?.let { endPoint ->
                         canvas.drawLine(startPoint.first,startPoint.second,endPoint.first,endPoint.second,Paint().apply {
                             color = Color.BLUE
                             strokeWidth = 5f
@@ -271,7 +275,6 @@ class MainActivity : AppCompatActivity() {
                     }
                     imageView.scaleX = scale
                     imageView.scaleY = scale
-                    println(scale)
                     return true
                 }
             })
@@ -302,80 +305,25 @@ class MainActivity : AppCompatActivity() {
 
 
         findViewById<FloatingActionButton>(R.id.run).setOnClickListener {
+            val names = listOf("A${Random.nextLong()}","B${Random.nextLong()}","C${Random.nextLong()}","D${Random.nextLong()}","E${Random.nextLong()}","F${Random.nextLong()}","G${Random.nextLong()}","H${Random.nextLong()}")
+            for (i in namesId.indices)
+                if (namesId[i].text.toString()=="")
+                    namesId[i].setText(names[i])
+
+            for (i in roadsId.indices)
+                if (roadsId[i].text.toString()=="")
+                    roadsId[i].setText(Random.nextInt(1..99).toString())
+
             val graph = Graph()
+            var counter:Int = 0
+            for(i in 0..7){
+                for(j in i+1..7){
+                    graph.addNewEdge(getName(i), getName(j), getRoad(counter).toInt())
+                    // second dir
+                    graph.addNewEdge(getName(j), getName(i), getRoad(counter++).toInt())
+                }
+            }
 
-            // NORMAL
-            graph.addNewEdge(getName(0),getName(1),getRoad(0).toInt())
-            graph.addNewEdge(getName(0),getName(2),getRoad(1).toInt())
-            graph.addNewEdge(getName(0),getName(3),getRoad(2).toInt())
-            graph.addNewEdge(getName(0),getName(4),getRoad(3).toInt())
-            graph.addNewEdge(getName(0),getName(5),getRoad(4).toInt())
-            graph.addNewEdge(getName(0),getName(6),getRoad(5).toInt())
-            graph.addNewEdge(getName(0),getName(7),getRoad(6).toInt())
-
-            graph.addNewEdge(getName(1),getName(2),getRoad(7).toInt())
-            graph.addNewEdge(getName(1),getName(3),getRoad(8).toInt())
-            graph.addNewEdge(getName(1),getName(4),getRoad(9).toInt())
-            graph.addNewEdge(getName(1),getName(5),getRoad(10).toInt())
-            graph.addNewEdge(getName(1),getName(6),getRoad(11).toInt())
-            graph.addNewEdge(getName(1),getName(7),getRoad(12).toInt())
-
-            graph.addNewEdge(getName(2),getName(3),getRoad(13).toInt())
-            graph.addNewEdge(getName(2),getName(4),getRoad(14).toInt())
-            graph.addNewEdge(getName(2),getName(5),getRoad(15).toInt())
-            graph.addNewEdge(getName(2),getName(6),getRoad(16).toInt())
-            graph.addNewEdge(getName(2),getName(7),getRoad(17).toInt())
-
-            graph.addNewEdge(getName(3),getName(4),getRoad(18).toInt())
-            graph.addNewEdge(getName(3),getName(5),getRoad(19).toInt())
-            graph.addNewEdge(getName(3),getName(6),getRoad(20).toInt())
-            graph.addNewEdge(getName(3),getName(7),getRoad(21).toInt())
-
-            graph.addNewEdge(getName(4),getName(5),getRoad(22).toInt())
-            graph.addNewEdge(getName(4),getName(6),getRoad(23).toInt())
-            graph.addNewEdge(getName(4),getName(7),getRoad(24).toInt())
-
-            graph.addNewEdge(getName(5),getName(6),getRoad(25).toInt())
-            graph.addNewEdge(getName(5),getName(7),getRoad(26).toInt())
-
-            graph.addNewEdge(getName(6),getName(7),getRoad(27).toInt())
-
-
-            // Second dir
-            graph.addNewEdge(getName(1),getName(0),getRoad(0).toInt())
-            graph.addNewEdge(getName(2),getName(0),getRoad(1).toInt())
-            graph.addNewEdge(getName(3),getName(0),getRoad(2).toInt())
-            graph.addNewEdge(getName(4),getName(0),getRoad(3).toInt())
-            graph.addNewEdge(getName(5),getName(0),getRoad(4).toInt())
-            graph.addNewEdge(getName(6),getName(0),getRoad(5).toInt())
-            graph.addNewEdge(getName(7),getName(0),getRoad(6).toInt())
-
-            graph.addNewEdge(getName(2),getName(1),getRoad(7).toInt())
-            graph.addNewEdge(getName(3),getName(1),getRoad(8).toInt())
-            graph.addNewEdge(getName(4),getName(1),getRoad(9).toInt())
-            graph.addNewEdge(getName(5),getName(1),getRoad(10).toInt())
-            graph.addNewEdge(getName(6),getName(1),getRoad(11).toInt())
-            graph.addNewEdge(getName(7),getName(1),getRoad(12).toInt())
-
-            graph.addNewEdge(getName(3),getName(2),getRoad(13).toInt())
-            graph.addNewEdge(getName(4),getName(2),getRoad(14).toInt())
-            graph.addNewEdge(getName(5),getName(2),getRoad(15).toInt())
-            graph.addNewEdge(getName(6),getName(2),getRoad(16).toInt())
-            graph.addNewEdge(getName(7),getName(2),getRoad(17).toInt())
-
-            graph.addNewEdge(getName(4),getName(3),getRoad(18).toInt())
-            graph.addNewEdge(getName(5),getName(3),getRoad(19).toInt())
-            graph.addNewEdge(getName(6),getName(3),getRoad(20).toInt())
-            graph.addNewEdge(getName(7),getName(3),getRoad(21).toInt())
-
-            graph.addNewEdge(getName(5),getName(4),getRoad(22).toInt())
-            graph.addNewEdge(getName(6),getName(4),getRoad(23).toInt())
-            graph.addNewEdge(getName(7),getName(4),getRoad(24).toInt())
-
-            graph.addNewEdge(getName(6),getName(5),getRoad(25).toInt())
-            graph.addNewEdge(getName(7),getName(5),getRoad(26).toInt())
-
-            graph.addNewEdge(getName(7),getName(6),getRoad(27).toInt())
 
 
 
@@ -383,7 +331,8 @@ class MainActivity : AppCompatActivity() {
             val solution = TravellingMerchantProblem().solve(getNames(),graph)
 
             // creating, saving and showing image also notifying user that image is saved
-            createPNG(solution.first, graph.GetAllEdges())?.let { result ->
+            createPNG(getNames()
+                , graph.GetAllEdges(),solution.first)?.let { result ->
                 saveImageToGallery(result)
                 showNotification("Graph app","Image saved!")
                 showBitmapPopup(this.applicationContext,this.findViewById(R.id.parentScroll),
