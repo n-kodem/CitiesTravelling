@@ -38,7 +38,7 @@ flowchart TD;
 
 ## Rozwiązania
 
-- Do obliczenia najkrótszej ścieżki między miastami zostanie wykorzystany algorytm Dijkstry.
+- Do obliczenia najkrótszej ścieżki między miastami zostanie wykorzystany Travelling Salesman Problem.
 
 - Aplikacja będzie używała Canvas w celu rysowania graficznej reprezentacji miast oraz ścieżek pomiędzy nimi.
 
