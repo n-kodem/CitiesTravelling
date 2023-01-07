@@ -31,8 +31,8 @@ flowchart TD;
       A[Pole do wprowadzenia danych]-->B["Oddzielne pola edycyjne dla każdego z miast"];
     A-->D["Pola edycyjne dla dróg każdego z miast np: Miasto A -> Miasto B"];
     B & D --> C["Przycisk do uruchomienia wyszukiwania"];
-    C --> D["Graficzna Reprezentacja obrazu"] & E["Przycisk powrotu"];
-    E --> A;
+    C --> E["Graficzna Reprezentacja obrazu"] & F["Przycisk powrotu"];
+    F --> A;
 ```
 
 
